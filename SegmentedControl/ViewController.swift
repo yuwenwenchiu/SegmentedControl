@@ -12,9 +12,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
     }
 
-
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBAction func pressedSegmented(_ sender:UISegmentedControl) {
+        if ( sender.selectedSegmentIndex == 0){
+            imageView.image = UIImage(named: "pic0")
+        }
+        else if ( sender.selectedSegmentIndex == 1){
+            imageView.image = UIImage(named: "pic1")
+        }
+        else{
+            imageView.image = UIImage(named: "pic2")
+        }
+    }
+    
 }
 
